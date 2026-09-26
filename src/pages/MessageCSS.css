@@ -1,0 +1,61 @@
+*{
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    body{
+        margin-top: 0 px;
+        margin-top:0 px;
+    }
+    .message-container{
+        background-color: rgb(192, 203, 219);
+        border-radius: 12px;
+        padding: 12px 18px ;
+        margin-left:10px ;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        max-width: 300px;
+        
+    }
+    input{
+        padding: 10px 18px;
+        border: solid 1px;
+        border-radius: 2px 20px;
+        margin:12px;
+        flex-grow: 1;
+    }
+    .userImage-container{
+        width:45px;
+    }
+    .chatingApp-container{
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    button{
+        border-radius:10px ;
+        background-color: rgb(71, 218, 169);
+    }
+    .messageRow-container{
+        display: flex;
+        margin-bottom: 10px;
+       
+    }
+    .Chating-container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .chatMessageUser1-container{
+        display: flex;
+        align-items: start;
+        justify-content: left;
+    }
+    .chatMessageUser2-container{
+        display: flex;
+        align-items: start;
+        justify-content: right;
+    }
+    .chatmessages-container{
+        flex-grow: 1;
+    }

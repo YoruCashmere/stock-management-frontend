@@ -1,0 +1,183 @@
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'popins', 'Courier New', Courier, monospace;
+    /* background-color: white; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: linear-gradient(90deg, rgb(196, 81, 234), rgb(231, 209, 238)); */
+}
+
+.login-container {
+    position: relative;
+    width: 850px;
+    height: 600px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background: linear-gradient(90deg, rgb(106, 203, 238), rgb(186, 101, 225));
+
+}
+
+.formBody,
+.registionform {
+    background-color: #ddd;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 40px;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.registionform {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.registionform:target {
+    opacity: 1;
+    visibility: visible;
+    z-index: 3;
+}
+
+.login-container:has(.registionform:target) .formBody {
+    opacity: 0;
+    visibility: hidden;
+    transition: 2s ease;
+}
+
+.login-container.active .formBody {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 2s ease;
+}
+
+.login-container.active .registionform {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    left: 1px;
+    transition: 2s ease;
+
+}
+
+.login-container {
+    transition: width .4s ease, height 0.4s ease;
+}
+
+.toddle {
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 8px 10px;
+}
+
+h1 {
+    font-size: 35px;
+    margin: 13px 0;
+}
+
+.DateAndSex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+}
+
+.date-box {
+    padding: 3px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inputBox-container {
+    position: relative;
+    margin: 10px;
+    width: 100%;
+}
+input{
+      background-color:#fff;
+}
+.inputBox-container input {
+    width: 100%;
+    padding: 13px 45px 13px 15px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inputBox-container i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.forgot-link {
+    margin: 15px 0;
+}
+
+.forgot-link a {
+    font-size: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.formSubmit-btn {
+    width: 100%;
+    height: 48px;
+    background: #7494ec;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+p {
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.socialIcons-conatainer {
+    display: flex;
+}
+
+.socialIcons-conatainer a {
+    display: inline-flex;
+    padding: 10px;
+    border: 2px solid #ccf;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    text-decoration: none;
+    color: #333;
+    width: 45px;
+}
