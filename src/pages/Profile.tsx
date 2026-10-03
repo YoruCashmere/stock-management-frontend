@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./profile.css"
-
-const baseURL = "http://localhost:5000/api/";
+import "./Profile.css"
+import api from "../../api/axios";
 
 type profileDatatype = {
     displayName: string,
@@ -19,17 +18,10 @@ const Profile = () => {
     useEffect(() => {
         const loadProfile = async () => {
             try {
-                const response = await fetch(`${baseURL}profile`, {
-                    method: 'GET',
-                    credentials: "include",
-                });
-                if (!response.ok) {
-                    throw new Error("Failed to load profile");
-                }
-                const data = await response.json();
-                setProfile(data.profile);
+                const response = await api.get("/profile");
+                setProfile(response.data.profile);
             } catch (err) {
-                setErroMessage("Oops  Could not load profile.please try again");
+                setErroMessage("Failed to load profile");
                 if (err instanceof Error) console.log(err);
             } finally {
                 setIsLoading(false);
@@ -49,17 +41,8 @@ const Profile = () => {
         setIsSaving(true);
         setErroMessage("");
         try {
-            const response = await fetch(`${baseURL}profile`, {
-                method: 'PATCH',
-                headers: { "Content-Type": "application/json" },
-                credentials: "include",
-                body: JSON.stringify(profile),
-            });
-            if (!response.ok) {
-                throw new Error("Failed to update");
-            }
-            const data = await response.json();
-            setProfile(data.profile);
+            const response = await api.get("/profile");
+            setProfile(response.data.profile);
         } catch (err) {
             setErroMessage("Could not save your changes. Please try again.");
             console.error(err)

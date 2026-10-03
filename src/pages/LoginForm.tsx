@@ -1,6 +1,7 @@
-import { Link, useNavigate } from "react-router"
+import { Link, useNavigate } from "react-router-dom"
 import "./LoginForm.css"
-import React, { useState } from "react"
+import React, { useState } from "react";
+import api from "../../api/axios"
 
 type Login = {
     userName: string,
@@ -17,7 +18,6 @@ type Register = Login & {
 
 export default function LoginForm() {
     const [isRegister, setIsRegister] = useState(false);
-    const baseURL = "http://localhost:5000/api/";
     const navigate = useNavigate();
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -29,15 +29,7 @@ export default function LoginForm() {
             isItRegistration: false
         }
         try {
-            const response = await fetch(`${baseURL}login`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(LogInUser),
-                credentials: 'include',
-            });
-            if (!response.ok) throw new Error("Login Failed");
+            const response = await api.post("/auth/login",LogInUser);
             // const result = await response.json();
             form.reset();
             navigate("/profile");
@@ -61,18 +53,10 @@ export default function LoginForm() {
         }
         console.log(newUser);
         try {
-            const response = await fetch(`${baseURL}register`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(newUser),
-                credentials: 'include',
-            });
+            const response = await api.post("/auth/login",newUser);
             form.reset();
             navigate("/profile");
-            if (!response.ok) throw new Error("Registration Failed");
-            const result = await response.json();
+            const result = await response.data.json();
             console.log(result);
         } catch (err) {
             if (err instanceof Error)
@@ -126,7 +110,7 @@ export default function LoginForm() {
                         <i className="bx bxl-gmail" />
                     </div>
                     <div className="inputBox-container">
-                        <input type="tel" className="inputBox" name="tel" placeholder="Tel" maxLength="15" required />
+                        <input type="tel" className="inputBox" name="tel" placeholder="Tel" maxLength={15} required />
                         <i className="bx bx-phone" />
                     </div>
                     <div className="inputBox-container">
