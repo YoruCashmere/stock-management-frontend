@@ -8,6 +8,8 @@ import Select from './components/select.component'
 import ComboBox from './components/comboBox.component'
 import type { warehouseI } from './interfaces/warehouse.interface'
 import { Loader, Skeleton } from './components/skeletonAndLoader.component'
+import UserTable from './components/table/DataTable.table'
+import ProgressionBar from './components/progressBar.component'
 
 const warehouses: warehouseI[] = [
   { id: "w001", warehouseName: "Douala Central", position: "cam", region: "lit" },
@@ -79,9 +81,11 @@ function App() {
           onValueChange={setWarehouseId}
         />
       </div>
-      <Loader/>
-      <Skeleton/>
-      <Input className='w-[25vh] focus:py-3'></Input>
+      <Loader />
+      <Skeleton />
+      <Input className='w-[25vh]'></Input>
+      <UserTable></UserTable>
+      <ProgressionBar initialUnits={400} actualUnits={100} ></ProgressionBar>
     </div>
   )
 }

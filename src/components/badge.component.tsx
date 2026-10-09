@@ -22,7 +22,7 @@ type BadgeType = {
 
 function Badge({ children, variant = "danger", className = "" }: BadgeType) {
 return(
-    <span className={cn("inline-flex items-center rounded-full px-3 py-2 text-md font-medium" ,`${variantStyles[variant]} ${className}`)}>
+    <span className={cn("inline-flex items-center rounded-xl px-3 py-2 text-md font-medium" ,`${variantStyles[variant]} ${className}`)}>
         {children}
     </span>
 )

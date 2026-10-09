@@ -1,7 +1,6 @@
 interface UserI {
     id: string,
     email: string,
-    hashedPassword: string,
     role: string,
     creator: string,
     firstName: string,
@@ -12,6 +11,8 @@ interface UserI {
     userName: string,
     warehouse?: string,
     createdAt?: string,
+    activeHours:number,
+    week:number,
 }
 
 

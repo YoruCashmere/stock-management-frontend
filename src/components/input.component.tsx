@@ -19,10 +19,11 @@ function Input({
 
             <input
                 className={cn(
-                    "rounded-lg border border-brand-laurel px-2 py-2",
+                    "rounded-lg border border-brand-laurel px-2 py-1",
                     "bg-white text-brand-deep",
                     "outline-none",
-                    "focus:border-brand-forest",                    
+                    "focus:border-brand-forest",
+                    "focus:py-2",                    
                     className
                 )}
                 {...props}
