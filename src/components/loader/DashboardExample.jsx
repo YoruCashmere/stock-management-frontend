@@ -30,7 +30,7 @@ export default function test() {
     );
   }
   if (showLoader) {
-    return <LoadingScreen loading={loading} onFinished={() => setLoading(false)} />;
+    return <LoadingScreen isLoading={loading} onFinished={() => setLoading(false)} />;
   }
 
   return <pre>{JSON.stringify(data, null, 2)}</pre>;
