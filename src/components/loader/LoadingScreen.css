@@ -1,0 +1,63 @@
+/* LoadingScreen styles. Everything is scoped under .sdl-loader so it cannot affect the rest of your app. */
+.sdl-loader {
+  --bg:#F8F9F2; --blob:#E8EFE0; --ink:#0B3B2E; --olive:#8A9A3B; --sub:#5F8070; --tag:#4A6258;
+  --dkg:#134D3C; --dkg2:#0F3F32; --dkg3:#1F5A47;
+  --screen:#F7F9F4; --screenline:#DCE5D5; --line:#B9CBB2; --sage:#A5C4A0; --sagelight:#C9D8C3;
+  --gold:#EDC070; --green:#3E7A52; --lgreen:#7DA16B;
+  --track:#E3EADC; --fill:#17543F; --stripe:rgba(255,255,255,.16); --muted:#A9B7A5; --ringlight:#CAD6C4;
+  --shirt:#789A82; --shirt2:#5F8169; --shirt3:#8FB09A; --shirtarm:#6F917A; --cuff:#8DAE98; --hair:#0F4034; --hair2:#2D6A57;
+  --skin:#E29A6E; --skin2:#C98259; --skin3:#EDA883;
+  --desk:#D3E0CE; --desk2:#B7CCB2; --shadow:#DCE6D4; --card:#FBFCF8; --white:#FFFFFF;
+  --chair:#14503F; --chair2:#23705A; --chair2d:#0E4031; --lid:#0D3E31; --scr1:#17543F; --scr2:#0E4435;
+  --deck:#B4C7B9; --lip:#8EA698; --bezel:#CBD9CC; --stand1:#C9D7CC; --stand2:#9FB5A5;
+  --p1a:#689657; --p1b:#548548; --p2a:#9AB56C; --p2b:#86A25E;
+  --p3a:#5F9061; --p3b:#4E7F54; --p4a:#8EAF6A; --p4b:#7B9C58;
+  --veinc:rgba(15,64,52,.55);
+  --ta:#4D8472; --tb:#2F5D50; --oa:#A3B84F; --ob:#7C8C30; --da:#3A7060; --db:#234E40;
+  --stemc:#F8F9F2; --glare:.5;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .sdl-loader {
+    --bg:#0B1511; --blob:#13251E; --ink:#EAF4EC; --olive:#B5C94E; --sub:#9DB8A8; --tag:#8FA89A;
+    --dkg:#226B54; --dkg2:#3FA37F; --dkg3:#2A7A61;
+    --screen:#182A23; --screenline:#2A433A; --line:#3F5C4E; --sage:#4F7A62; --sagelight:#3A5A4B;
+    --gold:#E8B85E; --green:#4FA06B; --lgreen:#6FA67F;
+    --track:#1D3128; --fill:#2FA37A; --stripe:rgba(255,255,255,.14); --muted:#4E6358; --ringlight:#3A5448;
+    --shirt:#5E8672; --shirt2:#46695A; --shirt3:#7CA08B; --shirtarm:#527A67; --cuff:#7CA08B; --hair:#2E7059; --hair2:#5AA58C;
+    --skin:#E0946A; --skin2:#C77A4F; --skin3:#EDA883;
+    --desk:#254238; --desk2:#1B352C; --shadow:#10201A; --card:#1A2D25; --white:#F2F8F3;
+    --chair:#1F6B55; --chair2:#3A9A7E; --chair2d:#17503F; --lid:#123A30; --scr1:#2C8F70; --scr2:#17604B;
+    --deck:#46675A; --lip:#34524A; --bezel:#2A4439; --stand1:#3D5C4F; --stand2:#2B4539;
+    --p1a:#6FAE5E; --p1b:#4F8F50; --p2a:#A9D07A; --p2b:#8DB35E;
+    --p3a:#57A06E; --p3b:#3A7A55; --p4a:#8EC275; --p4b:#639B55;
+    --veinc:rgba(8,28,22,.5);
+    --ta:#4FA088; --tb:#2F7A64; --oa:#C4D95C; --ob:#98AD34; --da:#3F8F78; --db:#276B57;
+    --stemc:#0B1511; --glare:.07;
+  }
+}
+:root[data-theme="dark"] .sdl-loader {
+    --bg:#0B1511; --blob:#13251E; --ink:#EAF4EC; --olive:#B5C94E; --sub:#9DB8A8; --tag:#8FA89A;
+    --dkg:#226B54; --dkg2:#3FA37F; --dkg3:#2A7A61;
+    --screen:#182A23; --screenline:#2A433A; --line:#3F5C4E; --sage:#4F7A62; --sagelight:#3A5A4B;
+    --gold:#E8B85E; --green:#4FA06B; --lgreen:#6FA67F;
+    --track:#1D3128; --fill:#2FA37A; --stripe:rgba(255,255,255,.14); --muted:#4E6358; --ringlight:#3A5448;
+    --shirt:#5E8672; --shirt2:#46695A; --shirt3:#7CA08B; --shirtarm:#527A67; --cuff:#7CA08B; --hair:#2E7059; --hair2:#5AA58C;
+    --skin:#E0946A; --skin2:#C77A4F; --skin3:#EDA883;
+    --desk:#254238; --desk2:#1B352C; --shadow:#10201A; --card:#1A2D25; --white:#F2F8F3;
+    --chair:#1F6B55; --chair2:#3A9A7E; --chair2d:#17503F; --lid:#123A30; --scr1:#2C8F70; --scr2:#17604B;
+    --deck:#46675A; --lip:#34524A; --bezel:#2A4439; --stand1:#3D5C4F; --stand2:#2B4539;
+    --p1a:#6FAE5E; --p1b:#4F8F50; --p2a:#A9D07A; --p2b:#8DB35E;
+    --p3a:#57A06E; --p3b:#3A7A55; --p4a:#8EC275; --p4b:#639B55;
+    --veinc:rgba(8,28,22,.5);
+    --ta:#4FA088; --tb:#2F7A64; --oa:#C4D95C; --ob:#98AD34; --da:#3F8F78; --db:#276B57;
+    --stemc:#0B1511; --glare:.07;
+}
+.sdl-loader { background: var(--bg); display: block; width: 100%; height: 100vh; height: 100dvh; }
+.sdl-loader text { font-family: "Poppins","Montserrat","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif; }
+.sdl-loader .sdl-blob{fill:var(--blob)} .sdl-loader .sdl-shadow{fill:var(--shadow)}
+.sdl-loader .sdl-dkg{fill:var(--dkg)} .sdl-loader .sdl-dkg3{fill:var(--dkg3)}
+.sdl-loader .sdl-screen{fill:var(--screen);stroke:var(--screenline);stroke-width:1.5}
+.sdl-loader .sdl-card{fill:var(--card);stroke:var(--screenline);stroke-width:1.5}
+.sdl-loader .sdl-ln{stroke:var(--line);stroke-width:5;stroke-linecap:round;fill:none}
+.sdl-loader .sdl-dash{stroke:var(--sage);stroke-width:2;stroke-dasharray:7 7;stroke-linecap:round;fill:none}
+.sdl-loader .sdl-vein{stroke:var(--v);fill:none;stroke-linecap:round}
