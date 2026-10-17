@@ -12,7 +12,7 @@ type CardType = {
 const variantStyle = {
     default: "bg-brand-cream",
     elevated: "bg-white shadow-lg",
-    danger: "bg-red border-danger"
+    danger: "bg-red-500 border-danger"
 }
 
 const sizeStyle = {

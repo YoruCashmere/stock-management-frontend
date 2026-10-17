@@ -4,9 +4,8 @@ import React from "react";
 type SelectType =
     React.SelectHTMLAttributes<HTMLSelectElement> & {
         label?: string;
-        error?: string;
     };
-function Select({ label, error, children, className, ...props }: SelectType) {
+function Select({ label, children, className, ...props }: SelectType) {
     return(
         <div className="flex flex-col gap-2 fleX-auto">
             {label && <label className="text-sm font-medium text-brand-deep">{label}</label>}
