@@ -1,22 +1,47 @@
-import Logo from "./logo.sidebar"
-import SidebarNavigator from "./navigator.sidebar"
+import { useState } from "react";
+import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 
-type sidebarType = {
-    expanded: boolean
-}
-export default function Sidebar({ expanded }: sidebarType) {
+import SidebarRail from "./rails.sidebar";
+import SidebarPanel from "./sidebarPanel.sidebar";
+
+export default function Sidebar() {
+    const [expanded, setExpanded] = useState(true);
+
+    function toggleSidebar() {
+        setExpanded((currentExpanded) => !currentExpanded);
+    }
+
+    function handleSettingsClick() {
+        console.log("Settings clicked");
+    }
+
     return (
-        <aside className={
-            `h-full overflow-hidden rounded-2xl border border-brand-laurel/30 bg-white shadow-md 
-                transition-all duration-500 ${expanded ? "w-64 p-5 opacity-100" : "w-0 p-0 opacity-0"}`
-        }>
-            <div className="flex h-full min-w-0 flex-col p-100 m-20">
-                <div className="mb-8">
-                    <Logo expanded={true} ></Logo>
-                </div>
-                <SidebarNavigator expanded={true}></SidebarNavigator>
+        <div className="flex h-full shrink-0 items-stretch gap-3">
+            <div className="relative flex h-full shrink-0">
+                <SidebarRail
+                    onSettingClick={handleSettingsClick}
+                />
+
+                <button
+                    type="button"
+                    onClick={toggleSidebar}
+                    aria-label={
+                        expanded ? "Collapse sidebar" : "Expand sidebar"
+                    }
+                    title={
+                        expanded ? "Collapse sidebar" : "Expand sidebar"
+                    }
+                    className="absolute -right-2 top-8 z-10 flex h-7 w-7 items-center justify-center rounded-full border border-brand-laurel/40 bg-white text-brand-deep shadow-sm transition-colors hover:bg-brand-cream"
+                >
+                    {expanded ? (
+                        <PanelLeftClose size={16} />
+                    ) : (
+                        <PanelLeftOpen size={16} />
+                    )}
+                </button>
             </div>
 
-        </aside>
-    )
+            <SidebarPanel expanded={expanded} />
+        </div>
+    );
 }
