@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { ChangeEvent, CSSProperties, FormEvent } from "react";
 import { isAxiosError } from "axios";
+import hero from "../assets/ainz.jpg"
 
 import {
     AtSign,
@@ -190,13 +191,13 @@ export default function AccountInformation() {
     }
 
     return (
-        <main className="relative flex h-screen w-screen w-full items-center justify-center overflow-x-hidden px-4 py-10 sm:px-8 lg:px-12">
+        <main className="relative flex min-h-screen w-full items-center justify-center overflow-x-hidden px-4 py-10 sm:px-8 lg:px-12">
             {/* Decorative hexagon lines, fading out toward the bottom */}
             <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 opacity-[0.14]"
                 style={{
-                    backgroundImage: hexPattern,
+                    // backgroundImage: hexPattern,
                     backgroundSize: "112px 200px",
                     maskImage: "linear-gradient(to bottom, #000, transparent 60%)",
                     WebkitMaskImage: "linear-gradient(to bottom, #000, transparent 60%)",
@@ -315,12 +316,11 @@ export default function AccountInformation() {
                         className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 rounded-b-full border border-white/80 bg-gradient-to-b from-white/70 to-slate-100/30"
                         style={{ width: NOTCH_RADIUS * 2, height: NOTCH_RADIUS }}
                     />
-
                     {/* Avatar: centre sits on the card's top edge */}
                     <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b from-slate-300 to-slate-400/70 p-2.5 shadow-[0_10px_30px_rgba(90,130,255,0.40)]">
                         <div className="rounded-full bg-white p-2.5">
                             <img
-                                src="/assets/hero.png"
+                                src={hero}
                                 alt="Profile"
                                 className="h-[120px] w-[120px] rounded-full object-cover"
                             />

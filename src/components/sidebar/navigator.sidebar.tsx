@@ -1,85 +1,52 @@
 import { NavLink } from "react-router-dom";
 import {
-    LayoutDashboard,
-    Package,
-    Warehouse,
-    ArrowLeftRight,
-    ClipboardList,
-    ChartNoAxesCombined,
-    Sidebar,
+    LayoutDashboard, Package, Warehouse,
+    ArrowLeftRight, ClipboardList, ChartNoAxesCombined,
 } from "lucide-react";
+import { cn } from "../../utils/cn.utils";
 
 const navigationItems = [
-    {
-        label: "Dashboard",
-        path: "/dashboard",
-        icon: LayoutDashboard,
-    },
-    {
-        label: "Inventory",
-        path: "/inventory",
-        icon: Package,
-    },
-    {
-        label: "Warehouses",
-        path: "/warehouses",
-        icon: Warehouse,
-    },
-    {
-        label: "Transfers",
-        path: "/transfers",
-        icon: ArrowLeftRight,
-    },
-    {
-        label: "Restock Suggestions",
-        path: "/restock",
-        icon: ClipboardList,
-    },
-    {
-        label: "Reports",
-        path: "/reports",
-        icon: ChartNoAxesCombined,
-    },
-    {
-        label: "Sidebar",
-        path: "/sidebar",
-        icon: Sidebar,
-    }
+    { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+    { label: "Inventory", path: "/inventory", icon: Package },
+    { label: "Warehouses", path: "/warehouses", icon: Warehouse },
+    { label: "Transfers", path: "/transfers", icon: ArrowLeftRight },
+    { label: "Restock Suggestions", path: "/restock", icon: ClipboardList },
+    { label: "Reports", path: "/reports", icon: ChartNoAxesCombined },
 ];
 
-type SidebarNavigationProps = {
-    expanded: boolean;
-};
+type Props = { expanded: boolean };
 
-export default function SidebarNavigator({
-    expanded,
-}: SidebarNavigationProps) {
+export default function SidebarNavigator({ expanded }: Props) {
     return (
-        <nav className="flex flex-col gap-3 p-200">
-            {navigationItems.map((item) => {
-                const Icon = item.icon;
-                return (
+        <ul className="flex flex-col gap-2">
+            {navigationItems.map(({ label, path, icon: Icon }) => (
+                <li key={path}>
                     <NavLink
-                        key={item.path}
-                        to={item.path}
-                        title={!expanded ? item.label : undefined}
+                        to={path}
+                        title={!expanded ? label : undefined}
                         className={({ isActive }) =>
-                            `flex items-center gap-3 rounded-xl px-3 py-3 transition-colors ${isActive
-                                ? "bg-brand-deep text-white"
-                                : "text-brand-deep hover:bg-brand-laurel/20"
-                            } ${expanded ? "" : "justify-center"}`
+                            cn(
+                                "flex h-10 items-center overflow-hidden rounded-xl transition-colors",
+                                isActive
+                                    ? "bg-ink-active text-white ring-1 ring-inset ring-white/15"
+                                    : "text-white/70 hover:bg-white/5 hover:text-white"
+                            )
                         }
                     >
-                        <Icon className="h-5 w-5 shrink-0" />
-
-                        {expanded && (
-                            <span className="whitespace-nowrap text-sm font-medium">
-                                {item.label}
-                            </span>
-                        )}
+                        <span className="grid h-10 w-10 shrink-0 place-items-center">
+                            <Icon className="h-5 w-5" />
+                        </span>
+                        <span
+                            className={cn(
+                                "whitespace-nowrap pr-3 text-sm font-medium transition-opacity duration-300",
+                                expanded ? "opacity-100 delay-200" : "opacity-0"
+                            )}
+                        >
+                            {label}
+                        </span>
                     </NavLink>
-                );
-            })}
-        </nav>
+                </li>
+            ))}
+        </ul>
     );
 }
