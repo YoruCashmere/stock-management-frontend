@@ -1,9 +1,6 @@
 * {
-    margin: 0px;
-    padding: 0;
     box-sizing: border-box;
-    font-family: 'popins', 'Courier New', Courier, monospace;
-    /* background-color: white; */
+    font-family: 'Poppins', 'Courier New', Courier, monospace;
 }
 
 body {

@@ -221,29 +221,17 @@ export default function AccountInformation() {
                             <fieldset disabled={isLoading} className="min-w-0 ">
                                 <div className="grid grid-cols-1 gap-x-11 gap-y-6 md:grid-cols-2 lg:gap-y-10">
                                     {/* Side padding on md+ leaves room for the avatar */}
-                                    <div className="flex md:pr-12 lg:pr-24">
-                                        <Input
-                                            label="First Name"
-                                            name="firstName"
-                                            value={form.firstName}
-                                            onChange={handleChange}
-                                            icon={<User size={22} />}
-                                            labelClassName={labelClass}
-                                            className={fieldClass}
-                                        />
-                                    </div>
+                                    <div className="grid gap-6 md:col-span-2 md:grid-cols-[1fr_auto_1fr]">
+                                        <Input label="First Name" name="firstName" value={form.firstName}
+                                            onChange={handleChange} icon={<User size={22} />}
+                                            labelClassName={labelClass} className={fieldClass} />
 
-                                    <div className="flex md:pl-12 lg:pl-24">
-                                        <Input
-                                            label="Last Name"
-                                            name="lastName"
-                                            value={form.lastName}
-                                            onChange={handleChange}
-                                            icon={<User size={22} />}
+                                        <div aria-hidden className="hidden md:block" style={{ width: notchW }} />
+
+                                        <Input label="Last Name" name="lastName" value={form.lastName}
+                                            onChange={handleChange} icon={<User size={22} />}
                                             labelAction={<SaveButton isSaving={isSaving} />}
-                                            labelClassName={labelClass}
-                                            className={fieldClass}
-                                        />
+                                            labelClassName={labelClass} className={fieldClass} />
                                     </div>
 
                                     <Input

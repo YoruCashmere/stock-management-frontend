@@ -68,10 +68,13 @@ export default function Sidebar({
                     expanded ? "w-full" : "w-13"
                 )}
             >
-                <span className="grid h-13 w-13 shrink-0 place-items-center">
-                    <Settings className="h-5 w-5" />
-                </span>
-                <span className={cn("whitespace-nowrap pr-4 text-sm font-medium transition-opacity duration-300", expanded ? "opacity-100 delay-200" : "opacity-0")}>
+                <Settings className="h-5 w-5 shrink-0" />
+                <span
+                    className={cn(
+                        "whitespace-nowrap text-sm font-medium transition-opacity duration-300",
+                        expanded ? "opacity-100 delay-200" : "opacity-0"
+                    )}
+                >
                     Settings
                 </span>
             </button>
