@@ -26,7 +26,7 @@ function App() {
         <Route path="/sidebar" element={<StockChartTest></StockChartTest>} />
       </Route>
       <Route element={<AppLayout />}>
-        <Route path="/products" element={<SingleProduct/>} />
+        <Route path="/product" element={<SingleProduct/>} />
       </Route>
     </Routes>
   )
