@@ -23,7 +23,7 @@ const sizeStyle = {
 
 function Card({ children, variant = "default", size = "md", className = "" }: CardType) {
     return (
-        <div className={cn(`border rounded-xl p-3 shadow-md bg-brand-cream 
+        <div className={cn(`border rounded-xl p-3 shadow-md bg-white
         ${variantStyle[variant]} ${sizeStyle[size]} ${className}`)}>
             {children}
         </div>

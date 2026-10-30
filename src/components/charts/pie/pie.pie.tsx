@@ -6,10 +6,10 @@ export default function StockChartTest() {
     return (
         <main className="min-h-screen bg-gray-100 p-6">
             <div className="mx-auto max-w-md flex gap-5">
-                {/* <CircularCircleChart
+                <CircularCircleChart
                     categories={stockCategories}
                     title="Expenditure Category"
-                /> */}
+                />
                 <StockBarChart ></StockBarChart>
             </div>
         </main>

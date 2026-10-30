@@ -3,7 +3,7 @@ import { cn } from "../utils/cn.utils";
 
 
 const variantStyles = {
-    success: "bg-success text-white",
+    success: "bg-brand-laurel text-brand-forest",
     danger: "bg-danger text-white",
     warning: "bg-warning text-white",
     info: "bg-info text-white",
@@ -18,14 +18,12 @@ type BadgeType = {
     className?: string
 }
 
-
-
 function Badge({ children, variant = "danger", className = "" }: BadgeType) {
-return(
-    <span className={cn("inline-flex items-center rounded-xl px-3 py-2 text-md font-medium" ,`${variantStyles[variant]} ${className}`)}>
-        {children}
-    </span>
-)
+    return (
+        <span className={cn("inline-flex items-center rounded-xl px-3 py-2 text-md font-medium", `${variantStyles[variant]} ${className}`)}>
+            {children}
+        </span>
+    )
 }
 
 export default Badge

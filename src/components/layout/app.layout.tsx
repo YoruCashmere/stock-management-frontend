@@ -1,12 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../sidebar/sidebar.sidebar";
+import UpperLayout from "./upper.layout";
 
 export default function AppLayout() {
     return (
         <div className="flex h-screen w-screen gap-6 bg-page p-2">
             <Sidebar></Sidebar>
-            <main className="overflow-y-auto  min-w-0 min-h-0 flex-1 rounded-3xl bg-shell">
-                <Outlet/>
+            <main className="overflow-y-auto  min-w-0 min-h-0 flex-1">
+                <UpperLayout></UpperLayout>
+                <div className="min-h-0 flex-1 overflow-y-auto rounded-3xl">
+                    <Outlet />
+                </div>
             </main>
         </div>
     )

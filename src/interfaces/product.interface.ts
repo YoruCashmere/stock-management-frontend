@@ -7,10 +7,10 @@ interface ProductI {
     description:string,
     specification:string,
     perishable:string,
-    createdAt?:string
     units?: number,
     images:string[],
-    skuBreakdown?:object[]
+    skuBreakdown:object[]
 }
+
 
 export type {ProductI};

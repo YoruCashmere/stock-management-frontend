@@ -4,7 +4,7 @@ import type {
     SalesRecordI,
 } from "../components/charts/graphs/utils.graph";
 
-const salesData: SalesRecordI[] = [
+export const salesData: SalesRecordI[] = [
     { date: "2026-10-01", quantity: 12 },
     { date: "2026-10-02", quantity: 18 },
     { date: "2026-10-03", quantity: 9 },

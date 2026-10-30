@@ -6,7 +6,7 @@ export default function test() {
   const [error, setError] = useState < string | null > (null);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
-    const loadProducts=async()=>{
+    const loadProduct=async()=>{
       try {
         setLoading(true);
         setError(null);
@@ -18,7 +18,7 @@ export default function test() {
         setShowLoader(false);
       }
     }
-    loadProducts();
+    loadProduct();
   }, []);
   if (error) {
     return (
