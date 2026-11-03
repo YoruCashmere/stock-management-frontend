@@ -1,11 +1,10 @@
 import { Navigate, Routes, Route } from "react-router-dom";
 import LoginForm from "./pages/LoginForm";
-// import MyComponents from "./pages/component.page";
 import AccountInformation from "./pages/Profile";
 import AppLayout from "./components/layout/app.layout";
 import StockChartTest from "./components/charts/pie/pie.pie";
 import SingleProduct from "./pages/singleProduct.page";
-// import SingleProduct from "./pages/singleProduct.page";
+import CategoriesPage from "./pages/categories.pages";
 
 function App() {
   return (
@@ -27,6 +26,9 @@ function App() {
       </Route>
       <Route element={<AppLayout />}>
         <Route path="/product" element={<SingleProduct/>} />
+      </Route>
+      <Route element={<AppLayout />}>
+        <Route path="/card" element={< CategoriesPage/>} />
       </Route>
     </Routes>
   )

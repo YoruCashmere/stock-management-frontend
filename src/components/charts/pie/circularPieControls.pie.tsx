@@ -64,7 +64,10 @@ export default function CircularCircleChart({ categories, title = "Expenditure C
 
     return (
         <section className="w-full p-6 rounded-2xl bg-white shadow-sm">
-            <div className="mx-auto h-[320px] w-full max-w-[420px]">
+            <p className="text-xl text-left font-bold text-brand-deep">
+                {title}
+            </p>
+            <div className="mx-auto h-[320px] w-full max-w-[420px] flex">
                 <div className="relative h-full w-full">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
@@ -83,19 +86,16 @@ export default function CircularCircleChart({ categories, title = "Expenditure C
                                 ))}
                             </Pie>
                             <Tooltip
-                                formatter={(value) => [
-                                    formatAmount(Number(value))
-                                ]}
+                                // formatter={(value) => [
+                                //     formatAmount(Number(value))
+                                // ]}
                             />
                         </PieChart>
                     </ResponsiveContainer>
-                    <div className="absolute insert-0 pointer-events-none flex justify-center items-center">
+                    <div className="absolute inset-0 pointer-events-none flex justify-center items-center">
                         <div className="max-w-[150px] text-center">
-                            <p className="text-sm font-semi-bold text-gray-600">
-                                {title}
-                            </p>
                             <p className="mt-2 text-xl font-bold text-gray-900">
-                                {formatAmount(total)}
+                                {total}
                             </p>
                         </div>
                     </div>
@@ -112,7 +112,7 @@ export default function CircularCircleChart({ categories, title = "Expenditure C
                         </span>
 
                         <span className="shrink-0 text-sm font-semibold text-gray-800">
-                            {formatAmount(category.amount)}
+                            {category.amount}
                         </span>
 
                         <span className="w-12 shrink-0 text-right text-sm font-semibold text-emerald-800">

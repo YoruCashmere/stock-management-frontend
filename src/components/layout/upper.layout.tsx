@@ -5,7 +5,7 @@ export default function UpperLayout() {
     const [darkMode, setDarkMode] = useState(false);
 
     return (
-        <header className="flex items-center justify-between gap-4 bg-page px-6 py-3 rounded-2xl">
+        <header className="flex items-center justify-between gap-4 bg-page px-6 py-3">
             <div className="flex items-center gap-4">
 
                 <div className="flex items-center gap-2 bg-shell rounded-xl border border-slate-100 px-3 py-2 

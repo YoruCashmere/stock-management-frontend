@@ -95,7 +95,7 @@ function ComboBox({
                     }
                     className={cn(
                         "w-full rounded-md border border-brand-laurel",
-                        "bg-brand-forest px-3 py-2 pr-10 text-white outline-none",
+                        "bg-ink px-3 py-2 pr-10 text-white outline-none",
                         "focus:border-brand-forest placeholder:text-white/60",
                         inputClassName
                     )}
@@ -129,12 +129,12 @@ function ComboBox({
                     className="
                         absolute left-0 top-full z-50 mt-1 max-h-[25vh]
                         w-full overflow-y-auto rounded-md
-                        border border-brand-laurel bg-brand-forest
+                        border border-brand-laurel bg-page 
                         shadow-lg
                     "
                 >
                     {filteredWarehouses.length === 0 ? (
-                        <div className="px-3 py-2 text-sm text-white/70">
+                        <div className="px-3 py-2 text-sm text-black-70">
                             No warehouses found
                         </div>
                     ) : (
@@ -149,11 +149,11 @@ function ComboBox({
                                     handleSelect(warehouse);
                                 }}
                                 className={cn(
-                                    "block w-full px-3 py-2 text-left text-white",
+                                    "block w-full px-3 py-2 text-left text-black",
                                     "hover:bg-white/10",
                                     String(warehouse.id) ===
-                                        String(value) &&
-                                        "bg-white/20"
+                                    String(value) &&
+                                    "bg-white/20"
                                 )}
                             >
                                 {warehouse.warehouseName}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Card from '../components/card.components'
+import Card from '../components/cards/body.card'
 import Button from '../components/button.components'
 import Badge from '../components/badge.component'
 import Input from '../components/input.component'

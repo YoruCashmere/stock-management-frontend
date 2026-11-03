@@ -4,9 +4,9 @@ import UpperLayout from "./upper.layout";
 
 export default function AppLayout() {
     return (
-        <div className="flex h-screen w-screen gap-6 bg-page p-2">
+        <div className="flex h-screen w-screen gap-6 p-2 bg-page">
             <Sidebar></Sidebar>
-            <main className="overflow-y-auto  min-w-0 min-h-0 flex-1">
+            <main className="overflow-y-auto min-w-0 min-h-0 flex-1">
                 <UpperLayout></UpperLayout>
                 <div className="min-h-0 flex-1 overflow-y-auto rounded-3xl">
                     <Outlet />

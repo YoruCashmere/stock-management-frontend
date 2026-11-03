@@ -20,7 +20,7 @@ export default function ProgressionBar({ initialUnits, actualUnits }: ProgressBa
         <div className="w-full min-w-24 space-y-1">
             <div className="flex item-center justify-between gap-2 text-xs">
                 <span className="text-gray-500">
-                    {actualUnits}/{initialUnits}
+                    {actualUnits}
                 </span>
                 <span>
                     {Math.round(safePercentage)}%
@@ -33,7 +33,7 @@ export default function ProgressionBar({ initialUnits, actualUnits }: ProgressBa
                 aria-valuemin={0}
                 aria-valuenow={safePercentage}
             >
-                <div className={`h-full  rounded-full transition-[width] duration-700 ease-out ${gaugeColours}`}
+                <div className={`h-full  rounded-full transition-[width] duration-1500 ease-out ${gaugeColours}`}
                     style={{ width: `${animationPercent}%` }}>
                 </div>
             </div>

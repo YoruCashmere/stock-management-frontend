@@ -1,4 +1,4 @@
-import { cn } from "../utils/cn.utils";
+import { cn } from "../../utils/cn.utils";
 
 type CardVariants = "elevated" | "default" | "danger";
 type CardSize = "sm" | "md" | "lg";
