@@ -8,7 +8,7 @@ export default function AppLayout() {
             <Sidebar></Sidebar>
             <main className="overflow-y-auto min-w-0 min-h-0 flex-1">
                 <UpperLayout></UpperLayout>
-                <div className="min-h-0 flex-1 overflow-y-auto rounded-3xl">
+                <div className="min-h-0 flex-1 overflow-y-auto overflow-clip rounded-3xl">
                     <Outlet />
                 </div>
             </main>

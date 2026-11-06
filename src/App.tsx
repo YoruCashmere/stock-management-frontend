@@ -5,6 +5,7 @@ import AppLayout from "./components/layout/app.layout";
 import StockChartTest from "./components/charts/pie/pie.pie";
 import SingleProduct from "./pages/singleProduct.page";
 import CategoriesPage from "./pages/categories.pages";
+import SingleCategory from "./pages/singleCategory.pages";
 
 function App() {
   return (
@@ -25,10 +26,13 @@ function App() {
         <Route path="/sidebar" element={<StockChartTest></StockChartTest>} />
       </Route>
       <Route element={<AppLayout />}>
-        <Route path="/product" element={<SingleProduct/>} />
+        <Route path="/products/:id" element={<SingleProduct />} />
       </Route>
       <Route element={<AppLayout />}>
-        <Route path="/card" element={< CategoriesPage/>} />
+        <Route path="/categories" element={< CategoriesPage />} />
+      </Route>
+      <Route element={<AppLayout />}>
+        <Route path="/categories/:id" element={< SingleCategory />} />
       </Route>
     </Routes>
   )
